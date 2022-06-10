@@ -1,0 +1,34 @@
+body {
+    background: white;
+    line-height: 1.5;
+    font-family: "Caveat", cursive;
+    margin: 0;
+  }
+
+.title {
+    font-family: "Gilmer",sans-serif;
+    font-weight: 700;
+    display: block;
+    color: white;
+    background: rgb(33, 97, 127);
+    padding: 5.5rem;
+    font-size: 3rem;
+    height: 56px;
+   }
+
+   .card {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border:2px solid black;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 20rem;
+    height: 12rem;
+  }
