@@ -14,6 +14,7 @@ body {
     font-size: 3rem;
     height: 56px;
     white-space: nowrap;
+    user-select: none;
    }
 
 .sub-title {
@@ -25,6 +26,7 @@ body {
     padding-left:0px;
     padding-right:0px;
     padding-bottom:10px;
+    user-select: none;
    }
 
    .card {
@@ -42,7 +44,28 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 50rem;
-    height: 20rem;
+    height: 30rem;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 2px rgba(0, 0, 0, 0.23);
+    font-family: "helevactia",sans-serif;
+  }
+
+  .citation-card {
+    background: white;
+    color: black;
+    padding: 1rem;
+    border:1px solid rgb(182, 182, 182);
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50rem;
+    height: 10rem;
     border-radius: 3px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 2px 2px rgba(0, 0, 0, 0.23);
     font-family: "helevactia",sans-serif;
@@ -86,3 +109,32 @@ padding-left:10px;
   padding-left:10px;
   }
 
+  .submit-text {
+    font-family: "helevactia",sans-serif;
+    font-size: 15px;
+  }
+
+  .submit-button {
+  background-color: white;  
+  border:1px solid rgb(154, 154, 154);
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  font-family: "helevactia",sans-serif;
+  vertical-align: middle;
+  padding: 5px;
+  }
+
+.submit-button:hover
+  {
+  opacity: .8;
+  }
+
+.submit-button:active
+  {
+  opacity: 0.2;
+  }
+
+.extend-width {
+   width: 510px;
+   }

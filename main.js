@@ -1,13 +1,24 @@
-function createTextField(nameType)
+textFieldList = []
+textFieldMap = new Map();
+
+function createTextField(nameType, styles = [])
    {
    var parentDiv = document.createElement("div");
 
    var textField = document.createElement("input");
    textField.type = "text";
-   textField.name = nameType.replace(" ", "-");
+   textField.name = nameType.replace(" ", "-").toLocaleLowerCase();
    textField.placeholder = nameType;
    textField.maxlength = 150
    textField.classList.add("text-input")
+
+   textFieldList.push(textField.name);
+   textFieldMap.set(textField.name, textField);
+
+   for(var i = 0; i < styles.length; i++)
+      {
+      textField.classList.add(styles[i]);   
+      }
 
    parentDiv.appendChild(textField);
    parentDiv.classList.add("name-input-pair");
@@ -51,15 +62,15 @@ function createDateDiv()
 function createOtherDiv()
    {
    var parentDiv = document.createElement("div");
-   parentDiv.classList.add("side");
    parentDiv.classList.add("pad-top-bottom");
-   parentDiv.appendChild(createTextField("Title"));
 
-   var month = createTextField("URL");
-   month.classList.add("pad-right-left-1");
-   parentDiv.appendChild(month);
+   children = ["Title", "Publisher", "URL"];
 
-   parentDiv.appendChild(createTextField("Publisher"));
+   children.forEach(element => {
+      var childDiv = createTextField(element, ["extend-width"]);
+      childDiv.classList.add("pad-bottom");
+      parentDiv.appendChild(childDiv);
+      });
 
    return wrapAndTitle(parentDiv, "Other");
    }
@@ -70,19 +81,59 @@ function wrapAndTitle(targetDiv, title)
 
    var subTitle = document.createElement("p");
    subTitle.classList.add("sub-title");
-   subTitle.innerHTML = title;
+   subTitle.innerText = title;
 
    parentDiv.appendChild(subTitle);
    parentDiv.appendChild(targetDiv);
 
    return parentDiv;
    }
+function createCitation()
+   {
+   var citationText = document.createElement("p");
+   citationText.classList.add("citation-text");
+
+   if()
+
+   var formattedText = "";
+   for(var i = 0; i < textFieldList.length; i++)
+      {
+      formattedText += (textFieldList[i]) + "\n";   
+      } 
+   citationText.innerText = formattedText;
+   
+
+   var parentDiv = document.createElement("div");
+   parentDiv.classList.add("citation-card");
+   
+   parentDiv.appendChild(citationText);
+   
+   return parentDiv;
+   }
+function onSubmitClick()
+   {
+   document.body.appendChild(createCitation());
+   }
 
 function createSubmitButton()
    {
-   var buttonDiv = document.createElement("div");  
+   var parentDiv = document.createElement("div"); 
+   var button = document.createElement("button");  
    
-   return buttonDiv;
+   button.classList.add("submit-button");
+   button.type = "submit";
+   button.onclick = onSubmitClick;
+
+   var submitText = document.createElement("span");  
+   submitText.innerText = "Submit";
+   submitText.classList.add("submit-text");
+   
+   //parentDiv.classList.add("Center")
+
+   button.appendChild(submitText);
+   parentDiv.appendChild(button);
+
+   return button;
    }
 
 function initDocument()
@@ -94,6 +145,8 @@ function initDocument()
       element.classList.add("pad-bottom");
       cardElement.appendChild(element);
       });
+
+   cardElement.appendChild(createSubmitButton());
    }
 
 document.addEventListener('DOMContentLoaded', function() {
