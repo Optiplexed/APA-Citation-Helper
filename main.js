@@ -93,7 +93,7 @@ function createCitation()
    var citationText = document.createElement("p");
    citationText.classList.add("citation-text");
 
-   if()
+   console.log(textFieldMap.get("first-name"));
 
    var formattedText = "";
    for(var i = 0; i < textFieldList.length; i++)
