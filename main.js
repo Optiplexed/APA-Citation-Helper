@@ -127,7 +127,7 @@ function createSubmitButton()
    var submitText = document.createElement("span");  
    submitText.innerText = "Submit";
    submitText.classList.add("submit-text");
-   
+   //
    //parentDiv.classList.add("Center")
 
    button.appendChild(submitText);
