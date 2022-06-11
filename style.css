@@ -1,38 +1,66 @@
 body {
-    background: white;
-    line-height: 1.5;
-    font-family: "Caveat", cursive;
+    color: #2C3343;
+    font-family: "Gilmer",sans-serif;
     margin: 0;
+    background-color: rgb(228, 228, 228);
   }
 
 .title {
-    font-family: "Gilmer",sans-serif;
     font-weight: 700;
     display: block;
     color: white;
     background: rgb(33, 97, 127);
-    padding: 5.5rem;
+    padding: 1.5rem;
     font-size: 3rem;
     height: 56px;
+    white-space: nowrap;
    }
 
    .card {
     background: white;
     color: black;
     padding: 1rem;
-    border:2px solid black;
-    text-align: center;
+    border:1px solid black;
     overflow: hidden;
     position: relative;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
-    width: 20rem;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40rem;
     height: 12rem;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-family: "helevactia",sans-serif;
   }
 
-  .input-pair {
-    text-align: left;
+.text-input{
+   padding-top: 0.5rem;
+   padding-bottom: 0.5rem;
+   }
+
+.side{
+  display: flex;
+  align-items: flex-end;
+}
+
+.name-input-pair{
+  vertical-align: middle;
   }
+
+.sub-title {
+  font-family: "helevactia",sans-serif;
+  font-size: 30px;
+}
+
+.card-element {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.small-padding {
+  padding-bottom: 50px;
+}

@@ -1,27 +1,50 @@
+function createTextField(nameType)
+   {
+   var parentDiv = document.createElement("div");
+
+   var title = document.createElement("span");
+   title.innerHTML = nameType;
+   title.classList.add("small-padding");
+
+   var textField = document.createElement("input");
+   textField.type = "text";
+   textField.name = nameType.replace(" ", "-");
+   textField.placeholder = title.innerHTML
+   textField.maxlength = 150
+   textField.classList.add("text-input")
+
+   parentDiv.appendChild(title);
+   parentDiv.appendChild(textField);
+   parentDiv.classList.add("name-input-pair");
+
+   return parentDiv;
+   }
+
+function createAuthorDiv()
+   {
+   var parentDiv = document.createElement("div");
+   parentDiv.classList.add("side");
+   parentDiv.classList.add("card-element");
+   parentDiv.appendChild(createTextField("First Name"));
+   parentDiv.appendChild(createTextField("Middle Name"));
+   parentDiv.appendChild(createTextField("Last Name"));
+
+   return parentDiv;
+   }
+
 function initDocument()
    {
-    cardElement = document.getElementsByClassName("card")[0];
-    textTypes = ["First Name", "Last Name", "Date"];
-    for(var i = 0; i < 3; i++)
-       {
-       parentDiv = document.createElement("div")
-       thingy = document.createElement("span");
-       textField = document.createElement("input");
+   var cardElement = document.getElementsByClassName("card")[0];
+   textTypes = ["First Name", "Last Name", "Date"];
+   
+   var formatType = document.createElement("span");
+   formatType.innerHTML = "Website";
+   formatType.classList.add("sub-title");
 
-       parentDiv.className = "input-pair"
-
-       thingy.innerHTML = textTypes[i];
-
-       textField.type = "text";
-       textField.name = textTypes[i].replace(" ", "-");
-       textField.placeholder = textTypes[i];
-       textField.maxlength = 150
-
-       parentDiv.appendChild(thingy);
-       parentDiv.appendChild(textField);
-       cardElement.appendChild(parentDiv);
-
-       }
+   cardElement.appendChild(formatType);
+   cardElement.appendChild(createAuthorDiv());
+   cardElement.appendChild(createTextField("title"));
+   cardElement.appendChild(createTextField("URL"));
    }
 
 document.addEventListener('DOMContentLoaded', function() {
